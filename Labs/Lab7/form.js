@@ -1,25 +1,15 @@
-function main () {
-	var a b
-	var c;
-	
+function main() {
+	var a, b, c;
+
 	a = 10;
+	console.log("a: "+ a);
 	b = 100;
-	
-	b = + a b;
-	c == a * b;
-	
+	console.log("b: "+ b);
+
+	b = a + b;
+	console.log("b: "+ b);
+	c = a * b;
+	console.log("c: "+ c);
+
 	document.writeln(c);
 }
-
-// function main () {
-// 	var a, b;
-// 	var c;
-// 	
-// 	a = 10;
-// 	b = 100;
-// 	
-// 	b = a + b;
-// 	c = a * b;
-// 	
-// 	document.writeln(c);
-// }

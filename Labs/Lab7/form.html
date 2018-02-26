@@ -10,20 +10,20 @@
 			// check if we have a search term before searching
 			// 1. get a reference to the searchbox
 			//    using the DOM api method document.getElementById();
-			// searchbox = ???;
-			
+			searchbox = document.getElementById('searchbox');
+
 			// 2. get the value of the searchbox
 			//    using the DOM api value property of an element
-			// searchvalue = ???;
-			
+			searchvalue = document.getElementById('searchbox').value;
+
 			// 3. test if the value is not equal to an empty string ("")
-			// if (???) {
-			// 	return true;
-			// }
-			// else {
-			// 	alert("please type a search query!");
-			// 	return false;
-			// }
+			if (searchvalue != "") {
+			return true;
+				}
+			else {
+			alert("please type a search query!");
+				return false;
+			}
 		}
 		</script>
 	</head>
