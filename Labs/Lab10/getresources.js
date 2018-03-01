@@ -22,6 +22,6 @@ $(function(){
 
       dispResc.html(output);
       $("table").addClass("table");
-    };
+    }
   });
 });
