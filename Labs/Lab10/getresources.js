@@ -2,7 +2,7 @@ $(function(){
 
   $('#btnGetReso').click(function()
   {
-    divResults = $('#divResults');
+    var divResults = $('#divResults');
     console.log("Point ---- 1");
 
     divResults.text('Loading data from JSON source..')
