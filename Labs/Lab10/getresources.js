@@ -15,6 +15,7 @@ $(function(){
 
     success: function(result)
     {
+      console.log(result);
       var output ="<table> <thead> <tr>  <th>Name</th>  <th>Provider</th>  <th>URL</th>  </thead> <tbody>";
       console.log("Point ---- 3");
 
