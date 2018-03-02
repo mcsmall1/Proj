@@ -27,7 +27,7 @@ $(function(){
       output+="</tbody></table>";
       console.log("Point ---- 5");
 
-      divResults.html(output);
+      divResults.html("<p>test</p>");
       $("table").addClass("table");
       console.log("Point ---- 6");
     }
