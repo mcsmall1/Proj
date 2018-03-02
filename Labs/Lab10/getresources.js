@@ -7,7 +7,7 @@ $(function(){
 
     divResults.text('Loading data from JSON source..')
     console.log("Point ---- 2");
-  });
+
 
   $.ajax({
     type: "GET",
@@ -26,10 +26,10 @@ $(function(){
       }
       output+="</tbody></table>";
       console.log("Point ---- 5");
-
-      divResults.HTML("<p> test</p>")
+      divResults.html("<p> test</p>");
       $("table").addClass("table");
       console.log("Point ---- 6");
+      });
     }
   });
 });
