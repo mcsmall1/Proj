@@ -29,7 +29,8 @@ $(function(){
       divResults.html("<p> test</p>");
       $("table").addClass("table");
       console.log("Point ---- 6");
-      });
+
     }
+      });
   });
 });
