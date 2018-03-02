@@ -1,4 +1,5 @@
 $(function(){
+
   $('#btnGetReso').click(function()
   {
     var dispResc = $('#dispResc');
