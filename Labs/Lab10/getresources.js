@@ -1,7 +1,7 @@
 $(function(){
   $('#btnGetReso').click(function()
   {
-    var dispResc = $('#dispResc');
+    dispResc = $('#dispResc');
     console.log("dispResc: "+ dispResc);
 
     dispResc.text('Loading data from JSON source..')
