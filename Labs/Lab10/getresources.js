@@ -31,6 +31,7 @@ $(function(){
         $("table").addClass("table");
         console.log("Point ---- 6");
         }
+        
     });
   });
 });
