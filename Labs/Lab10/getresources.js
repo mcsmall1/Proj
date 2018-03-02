@@ -2,10 +2,9 @@ $(function(){
 
   $('#btnGetReso').click(function()
   {
-    var dispResc = $('#dispResc');
     console.log("Point ---- 1");
 
-    dispResc.text('Loading data from JSON source..')
+    $("divResults").text('Loading data from JSON source..')
     console.log("Point ---- 2");
   });
 
@@ -26,7 +25,7 @@ $(function(){
       output+="</tbody></table>";
       console.log("Point ---- 5");
 
-      dispResc.html(output);
+      $("divResults").html(output);
       $("table").addClass("table");
       console.log("Point ---- 6");
     }
