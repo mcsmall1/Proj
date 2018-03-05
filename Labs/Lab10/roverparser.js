@@ -20,12 +20,14 @@
   console.log(result.photos);
   var photos = result.photos //this data contains an array called photos
 
-  var output="<table><thead><tr><th>Rover</th><th>Camera</th><th>Image URL</th></thead><tbody>";
+  var output="<table><thead><tr><th>Rover</th><th>Camera</th><th>Image URL</th><th>Date</th></thead><tbody>";
   for (var i in photos)
   {
-    output+="<tr><td>" + photos[i].rover.name + "</td><td>"
+    output += "<tr><td>"
+    + photos[i].rover.name + "</td><td>"
     + photos[i].camera.full_name + "</td><td>"
     + photos[i].img_src + "</td></tr>";
+    + photos[i].earth_date + "</td></tr>"
   }
   output+="</tbody></table>";
 
