@@ -5,12 +5,12 @@
  * @Last modified by:   john
  * @Last modified time: 23-Feb-182018
  */
- $(document).ready(function () {
+ $(function () {
 
-  $('#retrieve-data').click(function () {
-  var displayResources = $('#display-data');
+  $('#btnRetrieve').click(function () {
+  var divData = $('#divData');
 
-  displayResources.text('Loading Rover Data');
+  divData.text('Loading Rover Data');
 
   $.ajax({
   type: "GET",
@@ -29,7 +29,7 @@
   }
   output+="</tbody></table>";
 
-  displayResources.html(output);
+  divData.html(output);
   $("table").addClass("table");
   }
   });
