@@ -4,13 +4,13 @@ $(function() {
   $('#frmSearch').submit(function(){
     var searchterms = $("#searchterms").val();
     getResultFromOMDB("searchterms");
+    console.log(searchterms);
     return false;
   });
 });
 
 function getResultFromOMDB(searchterms){
-  console.log(searchterms);
-  var url = "https://www.omdbapi.com/?i=tt3896198&apikey=d5f27ac3" + searchterms;
+  var url = "https://www.omdbapi.com/?apikey=d5f27ac3" + searchterms;
   $.getJSON(url, function(jsondata){
     addResultsTitles(jsondata);
     console.log(jsondata);
