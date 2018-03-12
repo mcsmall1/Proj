@@ -3,7 +3,7 @@ $(function() {
 
   $('#frmSearch').submit(function(){
     var searchterms = $("#searchterms").val();
-    getResultFromOMDB("searchterms");
+    getResultFromOMDB(searchterms);
     console.log(searchterms);
     return false;
   });
@@ -19,6 +19,7 @@ function getResultFromOMDB(searchterms){
 
 function addResultsTitles(jsondata){
   var htmlstring = "";
+  console.log(jsondata);
   for(var i=0; i<10; i++){
     var title = jsondata.Search[i].Title;
     htmlstring += "<li>" +title+ "</li>"
