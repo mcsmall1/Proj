@@ -3,26 +3,26 @@ $(function() {
 
   $('#frmSearch').submit(function(){
     var searchterms = $("#searchterms").val();
-    getResultFromOMDB(searchterms);
+    getResFromOMDB(searchterms);
     console.log(searchterms);
     return false;
   });
 });
 
-function getResultFromOMDB(searchterms){
+function getResFromOMDB(searchterms){
   var url = "https://www.omdbapi.com/?apikey=d5f27ac3&s=" + searchterms;
   $.getJSON(url, function(jsondata){
-    addResultsTitles(jsondata);
+    addRes(jsondata);
     console.log(jsondata);
   });
 }
 
-function addResultsTitles(jsondata){
+function addRes(jsondata){
   var htmlstring = "";
-  console.log(jsondata);
   for(var i=0; i<10; i++){
     var title = jsondata.Search[i].Title;
-    htmlstring += "<li>" +title+ "</li>"
+    var poster = jsondata.Search[i].Poster;
+    htmlstring += "<li>" +title+ +poster+ "</li>"
   };
   console.log(htmlstring);
   $('#divRes').append(htmlstring);
