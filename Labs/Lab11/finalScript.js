@@ -10,7 +10,7 @@ $(function() {
 });
 
 function getResultFromOMDB(searchterms){
-  var url = "https://www.omdbapi.com/?apikey=d5f27ac3" + searchterms;
+  var url = "https://www.omdbapi.com/?apikey=d5f27ac3&s=" + searchterms;
   $.getJSON(url, function(jsondata){
     addResultsTitles(jsondata);
     console.log(jsondata);
