@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+			Noogle Search Results
+		</title>
+		<script>
+			function updateQuery () {
+				// grab the query terms from the location bar
+				var searchString = document.location.search;
+
+				// strip off the leading '?'
+				searchString = searchString.substring(1);
+
+				// split string of arguments into name=value pairs
+				var nvPairs = searchString.split("&");
+
+				// iterate though name=value pairs
+				// split into seperate name and value
+				// print to the browser console
+				for (i = 0; i < nvPairs.length; i++) {
+				     var nvPair = nvPairs[i].split("=");
+				     var name = nvPair[0];
+				     var value = nvPair[1];
+					 if(name == 'q') {
+						 // populate the empty span element with the query terms
+						 // grab reference to "query" <span> using a DOM method
+						 // update its innerHTML property with value
+						 
+					 }
+				}
+			}			
+		</script>
+	</head>
+	<body onload="updateQuery();">
+		<h1>
+			Noogle!
+		</h1>
+		
+		Searched for: <span id="query"></span>
+		
+		<ul>
+			<li><h3>result one</h3> not much here...</li>
+			<li><h3>result two</h3> still not much here...</li>
+			<li><h3>result three</h3>getting old quickly...</li>
+		</ul>
+	</body>
+</html>
