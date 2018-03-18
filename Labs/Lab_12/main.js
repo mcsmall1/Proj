@@ -11,9 +11,10 @@ $(function(){
     $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson", function(result) {
       console.log(result)
       result.features.forEach(function(quake){
-        //get coords
+        //get info
         var lng = quake.geometry.coordinates[0];
         var lat = quake.geometry.coordinates[1];
+        var mag = parseFloat(quake.properties.mag);
         //create dot
         var circle = L.circle([lat, lng], mag * 10000, {
           color: 'red',
