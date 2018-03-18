@@ -8,8 +8,8 @@ $(function(){
   //when the button on is clicked
   $('#Quake').click(function() {
     console.log("getting quakes");
-    $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson", function(result) {
-      console.log(result)
+    $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson", function(res) {
+      console.log(res)
       result.features.forEach(function(quake){
         //get info
         var lng = quake.geometry.coordinates[0];
@@ -24,6 +24,29 @@ $(function(){
         })
         //add to map
         circle.addTo(map);
+      });
+    });
+  });
+
+  $('#Drop').click(function() {
+    console.log("getting meteors");
+    $.getJSON("https://data.nasa.gov/resource/gh4g-9sfh.json", function(res) {
+      console.log(res)
+      result.features.forEach(function(meteor){
+        //get info
+        var lng = meteor.geolocation.longitude;
+        var lat = meteor.geolocation.latitude;
+        var type = meteor.recclass;
+        //create dot
+        var circle = L.circle([lat, lng], type, {
+          color: 'blue',
+          opacity: 0,
+          fillColor: 'blue',
+          fillOpacity: 0.5
+        })
+        //add to map
+        circle.addTo(map);
+        circle.addTo(mymap).bindPopup(''+meteor.name+'');
       });
     });
   });
