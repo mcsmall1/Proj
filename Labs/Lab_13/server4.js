@@ -2,6 +2,14 @@ var express = require('express');
 var onelinerJoke = require('one-liner-joke');
 var app = express();
 
+app.use(express.static('public'))
+
+app.get('/getform', function(req, res){
+  var name = req.query.name;
+  var quest = req.query.quest;
+  res.send("Hello " +name+ ". You've said your quest is: " +quest+ ". Good luck with that.");
+});
+
 app.get('/', function(req,res){
   res.send("Hello World! by express");
 });
