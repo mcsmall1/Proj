@@ -34,8 +34,8 @@ $(function(){
       console.log(res)
       res.forEach(function(meteor){
         //get info
-        var lng = meteor.geolocation[0];
-        var lat = meteor.geolocation[2];
+        var lat = meteor.geolocation[0];
+        var lng = meteor.geolocation[2];
         var type = meteor.recclass;
         //create dot
         var circle = L.circle([lat, lng], type, {
