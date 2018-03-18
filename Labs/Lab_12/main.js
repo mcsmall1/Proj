@@ -14,8 +14,8 @@ $('#Quake').click(function() {
     console.log(result)
     result.features.forEach(function(quake){
       //get coords
-      var lng = quake.geometery.coordinates[0];
-      var lat = quake.geometery.coordinates[1];
+      var lng = quake.geometry.coordinates[0];
+      var lat = quake.geometry.coordinates[1];
 
       //create dot
       var circle = L.circle([lat, lng], 1, {
