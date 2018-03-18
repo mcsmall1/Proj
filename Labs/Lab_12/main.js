@@ -46,7 +46,7 @@ $(function(){
         })
         //add to map
         circle.addTo(map);
-        circle.addTo(mymap).bindPopup(''+meteor.name+'');
+        circle.addTo(map).bindPopup(''+meteor.name+'');
       });
     });
   });
