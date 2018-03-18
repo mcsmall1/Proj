@@ -32,7 +32,7 @@ $(function(){
     console.log("getting meteors");
     $.getJSON("https://data.nasa.gov/resource/gh4g-9sfh.json", function(res) {
       console.log(res)
-      res.features.forEach(function(meteor){
+      res.forEach(function(meteor){
         //get info
         var lng = meteor.geolocation.longitude;
         var lat = meteor.geolocation.latitude;
