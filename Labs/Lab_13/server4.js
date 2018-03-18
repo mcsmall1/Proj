@@ -1,4 +1,5 @@
 var express = require('express');
+var onelinerJoke = require('one-liner-joke');
 var app = express();
 
 app.get('/', function(req,res){
