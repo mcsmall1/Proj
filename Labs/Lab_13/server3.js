@@ -1,7 +1,7 @@
 var http = require('http');
-var curdate = require('./module1');
+var curdate = require('one-liner-joke');
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/html'});
-  res.write("the date today is: " +curdate.DateTime()+ ".");
-  res.end('Hello World!');
+  var randomJoke = onelinerJoke.getRandomJoke();
+  res.end(randomJoke.body);
 }).listen(8080);
