@@ -1,5 +1,5 @@
 var http = require('http');
-var curdate = require('one-liner-joke');
+var onelinerJoke = require('one-liner-joke');
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/html'});
   var randomJoke = onelinerJoke.getRandomJoke();
