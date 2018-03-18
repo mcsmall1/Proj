@@ -10,7 +10,7 @@ $(function(){
     console.log("getting quakes");
     $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson", function(res) {
       console.log(res)
-      result.features.forEach(function(quake){
+      res.features.forEach(function(quake){
         //get info
         var lng = quake.geometry.coordinates[0];
         var lat = quake.geometry.coordinates[1];
@@ -32,7 +32,7 @@ $(function(){
     console.log("getting meteors");
     $.getJSON("https://data.nasa.gov/resource/gh4g-9sfh.json", function(res) {
       console.log(res)
-      result.features.forEach(function(meteor){
+      res.features.forEach(function(meteor){
         //get info
         var lng = meteor.geolocation.longitude;
         var lat = meteor.geolocation.latitude;
