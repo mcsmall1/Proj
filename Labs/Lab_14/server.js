@@ -15,13 +15,10 @@ var client = new Twitter({
 app.use(express.static('public'))
 
 app.get('/', function(req, res) {
-  //button assignment (take in parameters)...
-  var param = {screen_name: 'nodejs'};
-  //... here
-
+  var params = {screen_name: 'nodejs'};
   console.log('checkpoint');
   //do something with data (build html response)...
-  client.get('statuses/user_timeline', param, function(error, tweets, response) {
+  client.get('statuses/user_timeline', params, function(error, tweets, response) {
     var output = "";
     for (var i = 0; i < tweets.length; i++){
       output += "<div>";
