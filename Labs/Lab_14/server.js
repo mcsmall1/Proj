@@ -1,5 +1,8 @@
+//create express
 var express = require('express');
 var app = express();
+
+//load req modules
 var Twitter = require('twitter');
 
 var client = new Twitter({
@@ -12,10 +15,12 @@ var client = new Twitter({
 app.use(express.static('public'))
 
 app.get('/', function(req, res) {
+  //button assignment here
   var param = {screen_name: 'nodejs'};
   client.get('statuses/user_timeline', param, function(error, tweets, response) {
     if(!error){
       //do something with results (tweets)
+      console.log('checkpoint');
       console.log(tweets);
     }
   })
