@@ -8,7 +8,7 @@ var Twitter = require('twitter');
 var client = new Twitter({
   consumer_key:  'dtuCznqFiIlhXBh2acgQhphJn',
   consumer_secret: 'WnPM9eliD4LHsnjTFBHGjE76JqWE5Pmk9i09MKkQ3FQb0bjtS6',
-  access_token_key: '	1324957310-ijS6E2MdxqaI2653Djueb5qxFpzFOnvMc0oiLgJ',
+  access_token_key: '1324957310-ijS6E2MdxqaI2653Djueb5qxFpzFOnvMc0oiLgJ',
   access_token_secret: 'O0uCzsmPZ3k5aSo3dwWluv8ilIIstuprzpjdMm9eNJSLe'
 });
 
