@@ -17,11 +17,11 @@ app.use(express.static('public'))
 app.get('/', function(req, res) {
   //button assignment here
   var param = {screen_name: 'nodejs'};
+  console.log('checkpoint');
   client.get('statuses/user_timeline', param, function(error, tweets, response) {
     if(!error){
       //do something with results (tweets)
-      console.log('checkpoint');
-      console.log(tweets);
+      res.send(tweets);
     }
   });
   res.send("Hey World, by express");
