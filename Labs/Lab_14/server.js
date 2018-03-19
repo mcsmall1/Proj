@@ -14,8 +14,15 @@ var client = new Twitter({
 
 app.use(express.static('public'))
 
-app.get('/', function(req, res) {
-  var params = {screen_name: 'nodejs'};
+app.get('/', function(req,res){
+  res.send("Hello World! by express");
+});
+
+app.get('/getuser', function(req, res) {
+  //paramater assignment...
+  var name = req.query.name;
+  var params = {screen_name: name};
+  //.. here
   console.log('checkpoint');
   //do something with data (build html response)...
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
@@ -30,7 +37,6 @@ app.get('/', function(req, res) {
       res.send(output);
   //... here
   });
-  //res.send("Hey World, by express");
 });
 
 app.listen(8080);
