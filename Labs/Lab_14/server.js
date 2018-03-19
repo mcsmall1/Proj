@@ -20,6 +20,7 @@ app.get('/', function(req, res) {
   //do something with data (build html response)...
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
     var output = "";
+    if(error){console.log(error);}
     for (var i = 0; i < tweets.length; i++){
       output += "<div>";
       output += "<h2>" +tweets[i].user.screen_name+ "<h2>";
