@@ -26,9 +26,10 @@ app.get('/', function(req, res) {
       output += "<p>" +tweets[i].text+ "<p>";
       output += "</div>"
     }
+      res.send(output);
   //... here
   });
-  res.send("Hey World, by express");
+  //res.send("Hey World, by express");
 });
 
 app.listen(8080);
