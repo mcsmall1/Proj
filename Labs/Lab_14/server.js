@@ -15,14 +15,21 @@ var client = new Twitter({
 app.use(express.static('public'))
 
 app.get('/', function(req, res) {
-  //button assignment here
+  //button assignment (take in parameters)...
   var param = {screen_name: 'nodejs'};
+  //... here
+
   console.log('checkpoint');
+  //do something with data (build html response)...
   client.get('statuses/user_timeline', param, function(error, tweets, response) {
-    if(!error){
-      //do something with results (tweets)
-      res.send(tweets);
+    var output = "";
+    for (var i  0; t < tweets.length; t++){
+      output += "<div>";
+      output += "<h2>" +tweets[i].user.screen_name+ "<h2>";
+      output += "<p>" +tweets[i].text+ "<p>";
+      output += "</div>"
     }
+  //... here
   });
   res.send("Hey World, by express");
 });
