@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var Twitter = require('twittter');
+var Twitter = require('twitter');
 
 var client = new Twitter({
   consumer_key:  'dtuCznqFiIlhXBh2acgQhphJn',
