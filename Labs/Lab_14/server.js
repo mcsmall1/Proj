@@ -27,20 +27,24 @@ app.get('/getuser', function(req, res) {
   //do something with data (build html response)...
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
     var output = "";
-    if(error){console.log(error);}
-    for (var i = 0; i < tweets.length; i++){
-      output += "<div>";
-      output += "<h2>" +tweets[i].user.screen_name+ "<h2>";
-      output += "<p>" +tweets[i].text+ "<p>";
-      output += "</div>"
-    }
-    if (output == NULL) {
-      res.send("User Not Found!")
+    if (error) {
+      console.log(error);
+      res.redirect('http://small-limbo-8080.codio.io/error.html')
     } else {
-      res.send(output);
+      for (var i = 0; i < tweets.length; i++){
+        output += "<div>";
+        output += "<h2>" +tweets[i].user.screen_name+ "<h2>";
+        output += "<p>" +tweets[i].text+ "<p>";
+        output += "</div>"
+      }
     }
+    res.send(output);
   //... here
   });
 });
+
+app.get('/reset', function(req, res) {
+  res.redirect('http://small-limbo-8080.codio.io/form.html');
+})
 
 app.listen(8080);
