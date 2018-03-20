@@ -38,7 +38,7 @@ app.get('/getuser', function(req, res) {
         output += "</div>"
       }
     }
-    res.append(output);
+    res.send(output);
   //... here
   });
 });
