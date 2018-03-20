@@ -15,7 +15,7 @@ var client = new Twitter({
 app.use(express.static('public'))
 
 app.get('/', function(req,res){
-  res.send("Hello World! by express");
+  res.redirect('http://small-limbo-8080.codio.io/form.html');
 });
 
 app.get('/getuser', function(req, res) {
@@ -34,7 +34,11 @@ app.get('/getuser', function(req, res) {
       output += "<p>" +tweets[i].text+ "<p>";
       output += "</div>"
     }
+    if (output == NULL) {
+      res.send("User Not Found!")
+    } else {
       res.send(output);
+    }
   //... here
   });
 });
