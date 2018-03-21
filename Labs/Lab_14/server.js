@@ -45,6 +45,7 @@ app.get('/getuser', function(req, res) {
 
 app.get('/reset', function(req, res) {
   res.redirect('http://small-limbo-8080.codio.io/form.html');
+  // send error.html to page through res
 })
 
 app.listen(8080);
