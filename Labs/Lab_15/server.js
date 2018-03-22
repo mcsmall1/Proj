@@ -16,12 +16,13 @@ MongoClient.connect(url, function(err, datb) {
 app.get('/all', function(req, res) {
   db.collection('quotes').find().toArray(function(err, res){
     if(err){console.log(err);};
-    var output = ""
+    var output = "quotes"
     for (var i = 0; i < res.length; i++) {
-      output += "<div>";
-      output += "<h3>" +res[i].name+ "</h3>";
-      output += "<p>" +res[i].quote+ "</p>";
-      output += "<div>";
+      output += "<div>"
+      output += "<h3>" +res[i].name+ "</h3>"
+      output += "<p>" +res[i].quote+ "</p>"
+      output += "<div>"
+    console.log(output);
     }
     res.send(output)
   });
