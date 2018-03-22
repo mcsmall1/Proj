@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const url = "mongodb://localhost27017/SWQuotes";
+const url = "mongodb://localhost27017/SWQuote";
 const express = require('express');
 const app = express()
 
