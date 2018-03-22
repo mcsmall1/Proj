@@ -15,7 +15,7 @@ MongoClient.connect(url, function(err, datb) {
 
 app.get('/all', function(req, res) {
   db.collection('quotes').find().toArray(function(err, res){
-    if(error){throw error;console.log(error);};
+    if(err){throw err;console.log(err);};
     var output = ""
     for (var i = 0; i < res.length; i++) {
       output += "<div>";
