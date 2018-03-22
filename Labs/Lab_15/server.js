@@ -1,9 +1,11 @@
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017/SWQuote";
 const express = require('express');
-const app = express()
+const bodyParser = require('body-parser');
+const app = express();
 
-app.use(express.static('public'))
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({extended:true}));
 
 var db;
 
@@ -27,3 +29,11 @@ app.get('/all', function(req, res) {
     res.send(output)
   });
 });
+
+app.get('', function(req, res) {
+
+});
+
+//new route
+// app.get('', function(req, res) {
+//});
