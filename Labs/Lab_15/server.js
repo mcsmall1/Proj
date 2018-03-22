@@ -8,14 +8,14 @@ app.use(express.static('public'))
 var db;
 
 MongoClient.connect(url, function(err, datb) {
-    if(err){throw err;console.log(err);};
+    if(err){console.log(err);};
     db = datb;
     app.listen(8080);
 });
 
 app.get('/all', function(req, res) {
   db.collection('quotes').find().toArray(function(err, res){
-    if(err){throw err;console.log(err);};
+    if(err){console.log(err);};
     var output = ""
     for (var i = 0; i < res.length; i++) {
       output += "<div>";
