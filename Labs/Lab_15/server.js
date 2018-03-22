@@ -1,4 +1,4 @@
-const MongoClient = require('mongob').MongoClient;
+const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost27017/SWQuotes";
 const express = require('express');
 const app = express()
