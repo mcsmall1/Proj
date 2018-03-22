@@ -38,13 +38,19 @@ app.get('/getuser', function(req, res) {
         output += "</div>"
       }
     }
+    res.set('Content-Type', 'text/html');
     res.send(output);
   //... here
   });
 });
 
 app.get('/reset', function(req, res) {
-  res.redirect('http://small-limbo-8080.codio.io/form.html');
+  errorhtml += "<h1>Oops!</h1> <h2>It looks like there was an error, maybe that user is invalid.</h2>"
+  errorhtml += "<button type="submit" name="goback" onclick="/reset" value="RESET">go back</button>"
+  errorhtml += '<a href="http://small-limbo-8080.codio.io/form.html">go back (link)</a>'
+  res.set('Content-Type', 'text/html');
+  res.send(errorhtml)
+  //res.redirect('http://small-limbo-8080.codio.io/form.html');
 })
 
 app.listen(8080);
