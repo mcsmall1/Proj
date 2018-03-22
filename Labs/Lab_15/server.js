@@ -30,7 +30,7 @@ app.get('/all', function(req, res) {
   });
 });
 
-app.get('', function(req, res) {
+app.get('/quotes', function(req, res) {
 
 });
 
