@@ -27,6 +27,7 @@ app.get('/getuser', function(req, res) {
   //do something with data (build html response)...
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
     if (error != null) {
+      throw error;
       console.log("Error:- "+error);
       res.redirect('http://small-limbo-8080.codio.io/error.html')
     } else {
