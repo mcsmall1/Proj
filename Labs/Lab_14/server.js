@@ -26,9 +26,7 @@ app.get('/getuser', function(req, res) {
   console.log('checkpoint');
   //do something with data (build html response)...
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
-    if (error != null) {
-      throw error;
-      console.log("Error:- "+error);
+    if(err){throw err;console.log(err)
       res.redirect('http://small-limbo-8080.codio.io/error.html')
     } else {
       for (var i = 0; i < tweets.length; i++){

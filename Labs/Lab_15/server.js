@@ -8,7 +8,7 @@ app.use(express.static('public'))
 var db;
 
 MongoClient.connect(url, function(err, datb) {
-    if(error){throw error;console.log(error);};
+    if(err){throw err;console.log(err);};
     db = datb;
     app.listen(8080);
 });
