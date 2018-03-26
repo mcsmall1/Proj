@@ -32,7 +32,7 @@ app.get('/all', function(req, res) {
   });
 });
 
-app.get('/quotes', function(req, res) {
+app.get('/add', function(req, res) {
   db.collection('quotes').save(req.body, function(err, result) {
   if (err) throw err;
   console.log('saved to database')
