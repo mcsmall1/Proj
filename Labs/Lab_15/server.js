@@ -23,8 +23,8 @@ app.get('/all', function(req, res) {
 
     for (var i = 0; i < result.length; i++) {
       output += "<div>";
-      output += "<h3>" +res[i].name+ "</h3>";
-      output += "<p>" +res[i].quote+ "</p>";
+      output += "<h3>" +result[i].name+ "</h3>";
+      output += "<p>" +result[i].quote+ "</p>";
       output += "<div>";
     }
   console.log(output);
