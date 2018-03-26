@@ -16,20 +16,21 @@ MongoClient.connect(url, function(err, datb) {
 });
 
 app.get('/all', function(req, res) {
-  var output = "quotes"
-  db.collection('quotes').find().toArray(function(err, res){
+  db.collection('quotes').find().toArray(function(err, result){
     if(err){console.log(err);};
-    for (var i = 0; i < res.length; i++) {
+
+    var output = "quotes"
+
+    for (var i = 0; i < result.length; i++) {
       output += "<div>";
       output += "<h3>" +res[i].name+ "</h3>";
       output += "<p>" +res[i].quote+ "</p>";
       output += "<div>";
-      return output
     }
   console.log(output);
-  });
   res.set('Content-Type', 'text/html');
   res.send(output);
+  });
 });
 
 app.get('/quotes', function(req, res) {
