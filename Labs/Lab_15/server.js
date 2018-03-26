@@ -27,14 +27,17 @@ app.get('/all', function(req, res) {
       output += "<p>" +result[i].quote+ "</p>";
       output += "<div>";
     }
-  console.log(output);
   res.set('Content-Type', 'text/html');
   res.send(output);
   });
 });
 
 app.get('/quotes', function(req, res) {
-
+  db.collection('quotes').save(req.body, function(err, result) {
+  if (err) throw err;
+  console.log('saved to database')
+  res.redirect('/')
+  })
 });
 
 //new route
