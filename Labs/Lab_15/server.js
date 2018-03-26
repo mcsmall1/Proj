@@ -24,9 +24,9 @@ app.get('/all', function(req, res) {
       output += "<h3>" +res[i].name+ "</h3>"
       output += "<p>" +res[i].quote+ "</p>"
       output += "<div>"
-    console.log(output);
     }
   });
+  console.log(output);
   res.set('Content-Type', 'text/html');
   res.send(output);
 });
