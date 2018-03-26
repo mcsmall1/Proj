@@ -20,15 +20,16 @@ app.get('/all', function(req, res) {
   db.collection('quotes').find().toArray(function(err, res){
     if(err){console.log(err);};
     for (var i = 0; i < res.length; i++) {
-      output += "<div>"
-      output += "<h3>" +res[i].name+ "</h3>"
-      output += "<p>" +res[i].quote+ "</p>"
-      output += "<div>"
+      output += "<div>";
+      output += "<h3>" +res[i].name+ "</h3>";
+      output += "<p>" +res[i].quote+ "</p>";
+      output += "<div>";
+      return output
     }
   console.log(output);
+  });
   res.set('Content-Type', 'text/html');
   res.send(output);
-  });
 });
 
 app.get('/quotes', function(req, res) {
