@@ -26,8 +26,7 @@ app.get('/getuser', function(req, res) {
   console.log('checkpoint');
   //do something with data (build html response)...
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
-    if (error != null) {
-      console.log("Error:- "+error);
+    if(err){console.log(err)
       res.redirect('http://small-limbo-8080.codio.io/error.html')
     } else {
       for (var i = 0; i < tweets.length; i++){
@@ -38,14 +37,24 @@ app.get('/getuser', function(req, res) {
         output += "</div>"
       }
     }
+    res.set('Content-Type', 'text/html');
     res.send(output);
   //... here
   });
 });
 
 app.get('/reset', function(req, res) {
+<<<<<<< HEAD
   res.redirect('http://small-limbo-8080.codio.io/form.html');
   // send error.html to page through res
+=======
+  errorhtml += "<h1>Oops!</h1> <h2>It looks like there was an error, maybe that user is invalid.</h2>"
+  errorhtml += "<button type="submit" name="goback" onclick="/reset" value="RESET">go back</button>"
+  errorhtml += '<a href="http://small-limbo-8080.codio.io/form.html">go back (link)</a>'
+  res.set('Content-Type', 'text/html');
+  res.send(errorhtml)
+  //res.redirect('http://small-limbo-8080.codio.io/form.html');
+>>>>>>> f11e1626e10c2539caf9ab77203f53ef47c95573
 })
 
 app.listen(8080);
