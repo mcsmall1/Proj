@@ -25,10 +25,10 @@ app.get('/all', function(req, res) {
       output += "<p>" +res[i].quote+ "</p>"
       output += "<div>"
     }
-  });
   console.log(output);
   res.set('Content-Type', 'text/html');
   res.send(output);
+  });
 });
 
 app.get('/quotes', function(req, res) {
