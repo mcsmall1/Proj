@@ -1,4 +1,10 @@
-const MongoClient = require('mongodb').MongoClient;
+switch (expression) {
+  case expression:
+
+    break;
+  default:
+
+}const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017/SWQuote";
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -42,7 +48,8 @@ app.post('/add', function(req, res) {
 
 app.post('/search', function(req, res) {
   db.collection('quotes').find(req.body).toArray(function(err, result) {
-    if (err) throw err;
+    if(err){console.log(err);};
+    console.log(result);
     var output = "<h1>All the quotes</h1>";
     for (var i = 0; i < result.length; i++) {
       output += "<div>"
@@ -54,12 +61,9 @@ app.post('/search', function(req, res) {
   });
 });
 
-//app.('/update', function(req, res) {
-//});
-
-//app.('/delete', function(req, res) {
-//});
-
-//new route
-// app.get('', function(req, res) {
-//});
+app.post('/delete', function(req, res) {
+  db.collection('quotes').deleteOne(req.body, function(err, result) {
+    if(err){console.log(err);};
+    res.redirect('/');
+  });
+});
