@@ -40,14 +40,14 @@ app.post('/add', function(req, res) {
   })
 });
 
-app.('/filter', function(req, res) {
-});
+//app.('/filter', function(req, res) {
+//});
 
-app.('/update', function(req, res) {
-});
+//app.('/update', function(req, res) {
+//});
 
-app.('/delete', function(req, res) {
-});
+//app.('/delete', function(req, res) {
+//});
 
 //new route
 // app.get('', function(req, res) {
