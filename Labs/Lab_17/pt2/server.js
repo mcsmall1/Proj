@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 var db;
 
 MongoClient.connect(url, function(err, database) {
-  if (err) throw err;
+  if(err){console.log(err);};
   db = database;
   app.listen(8080);
   console.log('listening');
@@ -38,9 +38,9 @@ app.get('/update', function(req,res) {
 
 
 
-app.get('/allquotes', function(req, res) {
+app.get('/all', function(req, res) {
   db.collection('quotes').find().toArray(function(err, result) {
-    if (err) throw err;
+    if(err){console.log(err);};
     console.log(result);
     var output = "<h1>All the quotes</h1>";
     for (var i = 0; i < result.length; i++) {
@@ -53,9 +53,9 @@ app.get('/allquotes', function(req, res) {
   });
 });
 
-app.post('/quotes', function (req, res) {
+app.post('/add', function (req, res) {
   db.collection('quotes').save(req.body, function(err, result) {
-    if (err) throw err;
+    if(err){console.log(err);};
     console.log('saved to database')
     res.redirect('/')
   })
@@ -63,7 +63,7 @@ app.post('/quotes', function (req, res) {
 
 app.post('/search', function(req, res) {
   db.collection('quotes').find(req.body).toArray(function(err, result) {
-    if (err) throw err;
+    if(err){console.log(err);};
 
     var output = "<h1>quotes by" +req.body.name+ "</h1>";
 
