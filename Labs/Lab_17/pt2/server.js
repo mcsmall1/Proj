@@ -34,7 +34,7 @@ app.get('/update', function(req,res) {
   res.render('pages/update')
 });
 
-app.get('/all', function(req, res) {
+app.get('/allquote', function(req, res) {
   db.collection('quotes').find().toArray(function(err, result) {
     if(err){console.log(err);};
     console.log(result);
@@ -49,7 +49,7 @@ app.get('/all', function(req, res) {
   });
 });
 
-app.post('/add', function (req, res) {
+app.post('/addquote', function (req, res) {
   db.collection('quotes').save(req.body, function(err, result) {
     if(err){console.log(err);};
     console.log('saved to database')
@@ -57,7 +57,7 @@ app.post('/add', function (req, res) {
   })
 })
 
-app.post('/search', function(req, res) {
+app.post('/searchquotes', function(req, res) {
   db.collection('quotes').find(req.body).toArray(function(err, result) {
     if(err){console.log(err);};
 
@@ -73,14 +73,14 @@ app.post('/search', function(req, res) {
   });
 });
 
-app.post('/delete', function(req, res) {
+app.post('/deletequote', function(req, res) {
   db.collection('quotes').deleteOne(req.body, function(err, result) {
     if (err) throw err;
     res.redirect('/');
   });
 });
 
-app.post('/update', function(req, res) {
+app.post('/updatequotes', function(req, res) {
   var query = { quote: req.body.quote };
   var newvalues = { $set: {name: req.body.newname, quote: req.body.newquote } };
   db.collection('quotes').updateOne(query,newvalues, function(err, result) {
