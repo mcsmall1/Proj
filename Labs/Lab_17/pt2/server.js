@@ -1,13 +1,3 @@
-/**
- * @Author: John Isaacs <john>
- * @Date:   18-Mar-182018
- * @Filename: server.js
- * @Last modified by:   john
- * @Last modified time: 25-Mar-182018
- */
-
-
-
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017/star_wars_quotes";
 const express = require('express');
