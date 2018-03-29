@@ -32,12 +32,21 @@ app.get('/all', function(req, res) {
   });
 });
 
-app.get('/add', function(req, res) {
+app.post('/add', function(req, res) {
   db.collection('quotes').save(req.body, function(err, result) {
   if(err){console.log(err);};
   console.log('saved to database')
   res.redirect('/')
   })
+});
+
+app.('/filter', function(req, res) {
+});
+
+app.('/update', function(req, res) {
+});
+
+app.('/delete', function(req, res) {
 });
 
 //new route
