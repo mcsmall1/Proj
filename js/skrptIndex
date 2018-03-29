@@ -2,5 +2,5 @@
 if(err){console.log(err);};
 
 //new route
-// app.get('', function(req, res) {
-//});
+app.get('', function(req, res) {
+});
