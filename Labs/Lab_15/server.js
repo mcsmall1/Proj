@@ -1,10 +1,4 @@
-switch (expression) {
-  case expression:
-
-    break;
-  default:
-
-}const MongoClient = require('mongodb').MongoClient;
+const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017/SWQuote";
 const express = require('express');
 const bodyParser = require('body-parser');
