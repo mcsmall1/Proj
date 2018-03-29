@@ -18,8 +18,6 @@ MongoClient.connect(url, function(err, database) {
   console.log('listening');
 });
 
-//you need to complete these
-
 app.get('/', function(req,res) {
   res.render('pages/index')
 });
@@ -36,9 +34,7 @@ app.get('/update', function(req,res) {
   res.render('pages/update')
 });
 
-
-
-app.get('/allquotes', function(req, res) {
+app.get('/all', function(req, res) {
   db.collection('quotes').find().toArray(function(err, result) {
     if(err){console.log(err);};
     console.log(result);
