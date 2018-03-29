@@ -38,7 +38,7 @@ app.get('/update', function(req,res) {
 
 
 
-app.get('/all', function(req, res) {
+app.get('/allquotes', function(req, res) {
   db.collection('quotes').find().toArray(function(err, result) {
     if(err){console.log(err);};
     console.log(result);
