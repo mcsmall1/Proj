@@ -1,3 +1,0 @@
-# Proj
-
-Lewis McCullough
